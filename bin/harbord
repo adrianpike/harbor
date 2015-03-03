@@ -1,0 +1,4 @@
+#!/usr/bin/env coffee
+
+Server = require '../lib/server.coffee'
+new Server()

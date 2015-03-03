@@ -1,0 +1,6 @@
+#!/usr/bin/env coffee
+Minimist = require 'minimist'
+
+Pilot = require '../lib/pilot.coffee'
+options = Pilot.parseArguments Minimist process.argv.slice 2
+new Pilot options
