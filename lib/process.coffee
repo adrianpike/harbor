@@ -22,7 +22,7 @@ class Process extends events.EventEmitter # TODO: other types obviously
       cwd: @cwd
       env: @config_vars()
 
-    @pilot = new Pilot(options)
+    @pilot = new Pilot options
     @pilot.once 'exit', =>
       @stop()
 

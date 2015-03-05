@@ -10,4 +10,3 @@ else
   setTimeout ->
     console.log 'Now sinking.'
   , 1000
-

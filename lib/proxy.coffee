@@ -1,6 +1,6 @@
 http = require 'http'
 net = require 'net'
-StringDecoder = require('string_decoder').StringDecoder
+{StringDecoder} = require 'string_decoder'
 
 class Proxy
   successes: 0
@@ -61,7 +61,7 @@ class Proxy
   decodeHeaders: (rawHeaders) ->
     {}
 
-  shutdown: () ->
+  shutdown: ->
     # NOOP for now
 
   routeToBackend: (sock, backend) ->
@@ -74,6 +74,7 @@ class Proxy
       # If ECONNREFUSED - pull this backend out of the rotation.
       # Can retry at this point.
       if err.code is 'ECONNREFUSED'
+        # TODO: retry
         @backend.removeBackend backend.service, backend.revision, backend.host, ->
       console.log err
       @fatalError sock

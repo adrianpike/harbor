@@ -1,10 +1,10 @@
 harbor
 ======
 
-Harbor is a routing layer and set of deployment tools for 12factor microservice
-infrastructures. It allows engineering teams to easily deploy releases onto
-production infrastructure without downtime, and cut traffic over to individual
-services at their leisure.
+Harbor is a routing layer and set of deployment tools for
+[12factor](http://12factor.net) microservice infrastructures. It allows
+engineering teams to easily deploy releases onto production infrastructure
+without downtime, and cut traffic over to individual services at their leisure.
 
 It's designed to be modular and pluggable - if you want to run your own PaaS,
 harbor will do that. If you want to run your services on Heroku, harbor
@@ -119,9 +119,9 @@ About Harbor
 
 ### A Service
 
-A Service is a single 12factor service which is a component of a larger
+A Service is a single [12factor](http://12factor.net) service which is a component of a larger
 application. Services are given dynamic ports via the PORT environment variable.
-A service listens on this port for HTTP traffica, and has traffic routed to it
+A service listens on this port for HTTP traffic, and has traffic routed to it
 via the `Routing Layer`.
 
 ### The build step

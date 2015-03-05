@@ -20,7 +20,7 @@ class Server
     @processes = new ProcessRegistry @config
 
     if @config.control.port
-      @control = new Control @
+      @control = new Control this
     setInterval =>
       @updateState()
     , (@config.control.updateInterval or 5000)

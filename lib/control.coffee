@@ -15,15 +15,13 @@ class Control
     @httpServer.use restify.bodyParser()
 
     @httpServer.get '/', (req, res, next) ->
-      res.send
-        'status': 'ok'
+      res.send status: 'ok'
       next()
 
     @httpServer.get '/routes', (req, res, next) =>
-      @server.backend.domainRevisions (err, domains) ->
-        domains or= {}
+      @server.backend.domainRevisions (err, domains = {}) ->
         domains['default'] or= 'undefined' # Just to help people along
-        res.send domains or {}
+        res.send domains
         next()
 
     @httpServer.put '/routes/:domain', (req, res, next) =>
