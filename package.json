@@ -1,0 +1,24 @@
+{
+  "name": "harbor",
+  "version": "0.1.0",
+  "description": "Harbor is a proxy that handles all your internet traffic.",
+  "main": "bin/harbor",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrian Pike <adrian@adrianpike.com>",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "minimist": "^1.1.0",
+    "node-config": "0.0.2",
+    "redis": "^0.12.1",
+    "request": "^2.51.0",
+    "restify": "^2.8.5"
+  },
+  "devDependencies": {
+    "hippie": "^0.3.0",
+    "mocha": "^2.1.0",
+    "supervisor": "^0.6.0"
+  }
+}
