@@ -9,6 +9,7 @@ class Process extends events.EventEmitter # TODO: other types obviously
   revision: null
   id: null
   started: false
+  config: {}
 
   @generateId: ->
     Math.random().toString(36).slice 2
@@ -20,7 +21,7 @@ class Process extends events.EventEmitter # TODO: other types obviously
       revision: @revision
       command: @command
       cwd: @cwd
-      env: @config_vars()
+      env: @config
 
     @pilot = new Pilot options
     @pilot.once 'exit', =>
@@ -37,9 +38,6 @@ class Process extends events.EventEmitter # TODO: other types obviously
       @emit 'stopped'
       @started = false
     callback?()
-
-  config_vars: ->
-    RACK_ENV: 'production' # BUG
 
   port: ->
     if @kind is 'pilot'
