@@ -1,3 +1,6 @@
+> Hey friends - please note, that as of 2016, this project has been abandoned in favor of a ✨day job ✨. Please feel free to read through it, learn from it, lampoon me for bad code, or otherwise do with it what you will. FWIW, I have used many of the concepts I've hacked on in here in subsequent projects, generally using Docker for containerization and process management. Hit me up if you're curious about any choices I made. <3.
+
+
 harbor
 ======
 
