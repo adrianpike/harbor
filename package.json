@@ -14,7 +14,7 @@
     "node-config": "0.0.2",
     "redis": "^0.12.1",
     "request": "^2.51.0",
-    "restify": "^2.8.5"
+    "restify": "^8.4.0"
   },
   "devDependencies": {
     "hippie": "^0.3.0",
