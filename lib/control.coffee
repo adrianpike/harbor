@@ -80,6 +80,11 @@ class Control
       process.command = req.params.command
       process.service = req.params.service
       process.revision = req.params.revision
+      # TODO: move this lgoic into the ProcessRegistry
+      process.config = req.params.config or {}
+      for port, service of @server.ports
+        # FIXME: loopback isn't long-term accurate
+        process.config["#{service.toUpperCase()}_HOST"] or= "http://127.0.0.1:#{port}"
       @server.processes.register process
       res.send "Registered, #{process.id}"
       next()
@@ -92,6 +97,7 @@ class Control
         revision: process.revision
         id: process.id
         running: process.running()
+        config: process.config
       )
       res.send processes
       next()
